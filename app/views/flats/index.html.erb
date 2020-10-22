@@ -2,6 +2,13 @@
 
 <h3><%= link_to "Create a flat listing!", new_flat_path %></h3>
 
+<form action="/flat/search" method="get">
+  <input type="text" name="searchquery" placeholder="Search for a flat">
+  <input type="submit" value="search">
+</form>
+
+<br>
+
 <% @flats.each do |flat| %>
   <h3> <%= flat.name %> </h3>
   <p> <%= flat.address %> </p>

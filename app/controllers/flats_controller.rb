@@ -3,6 +3,10 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
+  def query
+    @flats = Flat.where("name LIKE '%#{params[:searchquery]}%'")
+  end
+
   def new
     @flat = Flat.new
   end
@@ -44,5 +48,4 @@ class FlatsController < ApplicationController
   def flat_params
     params.require(:flat).permit(:name, :address, :description, :number_of_guests, :price_per_night)
   end
-
 end

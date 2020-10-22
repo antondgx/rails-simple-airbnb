@@ -10,6 +10,11 @@
 
 require "faker"
 
+@flats = Flat.all
+@flats.each do |flat|
+  flat.destroy
+end
+
 Flat.create!(
   name: 'Light & Spacious Garden Flat London',
   address: '10 Clifton Gardens London W9 1DT',
